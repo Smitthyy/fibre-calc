@@ -1,1 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<title>Fibre Calculator</title>
+</head>
+<body>
 
+<div id="spec">
+<h3>Project Specifications</h3>
+<p>Figures given in the table below are for reference, please refer to the spec supplied for your customers project.</p>
+<table id="details">
+    <th>Max Attenuation (dbm)</th>
+    <tr> 
+      <td width="33%">1310nm</td>
+      <td width="33%">1550nm</td>
+      <td width="33%">1625nm</td>
+    </tr>
+    <tr>
+        <td>0.35</td>
+        <td>0.25</td>
+        <td>0.30</td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+        <td width="80%">Max CD Coefficient (ps/nm.KM):</td>
+        <td>18</td>
+    </tr>
+    <tr>
+        <td>Max 1st Order PMD Coefficient (ps/KM^1/2): </td>
+        <td>0.2</td>
+    </tr>
+    <tr>
+        <td>Max Connector Loss (db): </td>
+        <td>0.5</td>
+    </tr>
+    <tr>
+        <td>Max Average Splice Loss (db): </td>
+        <td>0.1</td>
+    </tr>
+  </table>
+  </div>
+
+<div id="otdr">
+<h3>Calculate OTDR</h3>
+<form>
+    <p>Distance A>B <input type='text' id='ab'></p>
+    <p>Distance B>A <input type='text' id='ba' onChange="calcotdr()"></p>
+    <input type="button" onClick="calc()" value="Calculate" />
+    <div id="otdrresult">OTDR average is: <span id="resultotdr"></span></div>
+</form>
+</div>
+
+<div id="ilm">
+  <h3>Calculate ILM</h3>
+<form>
+<p>Cable KM (from OTDR results average) <input type="text" id="km"/></p>
+<p>Max Attenuation (from table above) <input type="text" id="atten" /></p>
+<p>Reference measurement (from device) <input type="text" onChange="calc()" id="ref" /></p>
+<input type="button" onClick="calc()" value="Calculate" />
+<div id="ilmresult">ILM result is: <span id="resultilm"></span></div>
+</form>
+<div id="result"></div>
+</div>
+
+<script src="ilmscript.js"></script>
+<script src="otdrscript.js"></script>
+
+</body>
+</html>

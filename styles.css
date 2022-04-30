@@ -1,1 +1,13 @@
 
+table, td, th {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+#ilmresult {
+    padding-top: 15px;
+}
+
+#otdrresult {
+    padding-top: 15px;
+}
