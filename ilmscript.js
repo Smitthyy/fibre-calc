@@ -1,4 +1,4 @@
-function calc(){
+function calcilm(){
     var km=document.getElementById('km').value;
     var attenuation=document.getElementById('atten').value;
     var reference=document.getElementById('ref').value;

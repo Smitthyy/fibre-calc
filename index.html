@@ -78,7 +78,7 @@
         <form>
             <p>Cable KM (from OTDR results average) <input type="text" id="km"/></p>
             <p>Measured attenuation (from ILM) <input type="text" id="atten" /></p>
-            <p>Reference measurement (deducted from test result) <input type="text" onChange="calc()" id="ref" /></p>
+            <p>Reference measurement (deducted from test result) <input type="text" onChange="calcilm()" id="ref" /></p>
             <input type="button" onClick="calc()" value="Calculate" />
         <div id="ilmresult">ILM attenuation is: <span id="resultilm"></span></div>
         </form>
