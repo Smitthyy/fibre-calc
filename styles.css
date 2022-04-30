@@ -41,6 +41,11 @@ a {
     padding-bottom: 20px;
 }
 
+#details {
+    align-self: center;
+    max-width: 50%;
+}
+
 table, td, th {
     padding: 10px;
     border: 1px solid black;
