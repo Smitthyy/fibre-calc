@@ -3,15 +3,20 @@
 <head>
 <link rel="stylesheet" href="styles.css">
 <meta charset="utf-8">
-<title>Fibre Calculator</title>
+<title>Fibre Loss Calculator</title>
 </head>
 <body>
 
 <div class="container">
 
+    <div>
+        <h1>Fibre Tools</h1>
+        <p>Tools to assist fibre field engineers with testing/comissioning fibre networks.</p>
+    </div>
+
     <div id="spec">
-        <h3>Project Specifications</h3>
-        <p>Figures given in the table below are for reference, please refer to the spec supplied for your customers project.</p>
+        <h2 id="title">Project Specifications</h2>
+        <p>This tool is inteded to be used as a loss budget calculator tool to assist in determining if the results from fibre testing fall within your customers 'pass threshold'. Figures given in the table below are for reference, please refer to the spec supplied for your customers project.</p>
     </div>
 
     <div id="details">
@@ -49,8 +54,8 @@
     </div>
 
     <div id="otdr">
-        <h3>Calculate OTDR</h3>
-        <p>Enter total length readings from bi directional OTDR readings here to receive the mean distance.</p>
+        <h3>OTDR length</h3>
+        <p>Enter total length readings from bi directional OTDR readings here to receive the averaged distance.</p>
         <form>
             <p>Distance A>B (km)<input type='text' id='ab'></p>
             <p>Distance B>A (km)<input type='text' id='ba' onChange="calcotdr()"></p>
@@ -60,20 +65,20 @@
     </div>
 
     <div id="ilm">
-        <h3>Calculate ILM limit</h3>
-        <p>Using the table above or your own customers spec, enter the max allowable attenuation/KM here to compare against your measured results.</p>
+        <h3>ILM loss/km</h3>
+        <p>Using the table above or your own customers spec, enter the attenuation/KM to compare against your measured results. Remember your measured result includes all connectors/splice loss, these results will only show you the maximum loss budget/km.</p>
         <form>
             <p>Cable length in KM (from OTDR section) <input type="text" id="km"/></p>
-            <p>Max attenuation/km (from table above or customer spec) <input type="text" id="atten" /></p>
-            <p>Instrument zero measurement (deducted from test result) <input type="text" onChange="calcilm()" id="ref" /></p>
+            <p>Attenuation budget/km (from table above or customer spec) <input type="text" id="atten" /></p>
+            <p>Instrument self test (deducted from test result) <input type="text" onChange="calcilm()" id="ref" /></p>
             <input type="button" onClick="calc()" value="Calculate" />
-        <div id="ilmresult">Max allowable attenuation is <span id="resultilm"></span> on the length of your fibre, compare to ensure your measured reading is lower.</div>
+        <div id="ilmresult">Attenuation budget is <span id="resultilm"></span>. This budget includes all connectors/splices, compare to ensure your measured reading is lower.</div>
         </form>
         <div id="result"></div>
     </div>
 
     <div id="footer">
-        <p>For more info please <a href='mailto:info@fibretool.uk'>send me an email.</a></p>
+        <p>For more info or to report an issue please <a href='mailto:info@fibretool.uk'>send an email.</a></p>
     </div>
 
     <script src="ilmscript.js"></script>

@@ -14,6 +14,7 @@ p {
     flex-direction: column;
     margin: 0 auto;
     text-align: center;
+    max-width: 50%;
 }
 
 #nav {
@@ -31,9 +32,13 @@ p {
     padding-right: 50px;
 }
 
+#title {
+    padding-bottom: 20px;
+}
+
 a {
     color: inherit;
-    text-decoration: none;
+    text-decoration-color: blue;
     padding-right: 75px;
 }
 
@@ -42,7 +47,6 @@ a {
     flex-direction: column;
     align-self: center;
     padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 #details {
